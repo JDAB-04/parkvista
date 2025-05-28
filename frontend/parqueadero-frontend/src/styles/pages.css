@@ -1,0 +1,180 @@
+/* Estilos para las páginas - consistente con el sidebar */
+
+.page-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .page-header {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #1e293b;
+  }
+  
+  .page-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 8px 0;
+  }
+  
+  .page-header p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  /* Estilos para tarjetas de formulario */
+  .form-card {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vehicle-form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #cbd5e1;
+  }
+  
+  .form-group input {
+    background-color: #1e293b;
+    color: white;
+    padding: 12px 16px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  .form-group input::placeholder {
+    color: #64748b;
+  }
+  
+  .submit-btn {
+    padding: 12px 24px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+  
+  /* Estilos para tarjetas de tabla */
+  .table-card {
+    background-color: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .vehicles-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .vehicles-table thead {
+    background-color: #1e293b;
+  }
+  
+  .vehicles-table th {
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #cbd5e1;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .vehicles-table td {
+    padding: 16px;
+    color: #e2e8f0;
+    border-top: 1px solid #1e293b;
+    font-size: 14px;
+  }
+  
+  .vehicles-table tr:hover {
+    background-color: #1e293b;
+  }
+  
+  .placa-cell {
+    font-weight: 600;
+    color: #60a5fa;
+  }
+  
+  .tarifa-cell {
+    font-weight: 600;
+    color: #10b981;
+  }
+  
+  .empty-state {
+    padding: 48px;
+    text-align: center;
+  }
+  
+  .empty-state p {
+    color: #64748b;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .page-container {
+      max-width: 100%;
+      padding: 0 16px;
+    }
+    
+    .form-card {
+      padding: 24px;
+    }
+    
+    .vehicle-form {
+      max-width: 100%;
+    }
+    
+    .vehicles-table {
+      font-size: 12px;
+    }
+    
+    .vehicles-table th,
+    .vehicles-table td {
+      padding: 12px 8px;
+    }
+  }
