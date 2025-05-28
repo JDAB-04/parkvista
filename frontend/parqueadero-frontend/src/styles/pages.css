@@ -1,180 +1,428 @@
 /* Estilos para las páginas - consistente con el sidebar */
 
 .page-container {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+.page-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(120deg, #fff, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.page-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Estilos para tarjetas de formulario */
+.form-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.vehicle-form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-group label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group input {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group select {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.form-group select option {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 1rem;
+}
+
+.form-group select:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
+}
+
+.submit-btn:hover::before {
+  opacity: 1;
+}
+
+/* Estilos para tarjetas de tabla */
+.table-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.table-container {
+  overflow-x: auto;
+  padding: 0.5rem;
+}
+
+.vehicles-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.vehicles-table thead {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.vehicles-table th {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vehicles-table td {
+  padding: 1.25rem 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9375rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vehicles-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.vehicles-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.placa-cell {
+  font-weight: 600;
+  color: #818cf8;
+  font-family: 'Monaco', 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.tarifa-cell {
+  font-weight: 600;
+  color: #34d399;
+}
+
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.empty-state p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.125rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Estilos para mensajes de éxito y error */
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideIn 0.3s ease;
+}
+
+.alert-success {
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: #34d399;
+}
+
+.alert-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilos para los iconos en los inputs */
+.input-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.3s ease;
+}
+
+.input-with-icon {
+  padding-left: 2.75rem !important;
+}
+
+.input-with-icon:focus + .input-icon {
+  color: #4f46e5;
+}
+
+/* Animación para el botón de submit */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+  }
+}
+
+.submit-btn.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .page-container {
+    max-width: 100%;
+    padding: 1rem;
   }
   
-  .page-header {
-    margin-bottom: 32px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #1e293b;
-  }
-  
-  .page-header h2 {
-    font-size: 28px;
-    font-weight: 600;
-    color: white;
-    margin: 0 0 8px 0;
-  }
-  
-  .page-header p {
-    color: #94a3b8;
-    font-size: 16px;
-    margin: 0;
-  }
-  
-  /* Estilos para tarjetas de formulario */
   .form-card {
-    background-color: #0f172a;
-    border: 1px solid #1e293b;
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
   }
   
   .vehicle-form {
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .form-group label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #cbd5e1;
-  }
-  
-  .form-group input {
-    background-color: #1e293b;
-    color: white;
-    padding: 12px 16px;
-    border: 1px solid #334155;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: all 0.2s ease;
-  }
-  
-  .form-group input:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  }
-  
-  .form-group input::placeholder {
-    color: #64748b;
-  }
-  
-  .submit-btn {
-    padding: 12px 24px;
-    background-color: #2563eb;
-    color: white;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 16px;
-  }
-  
-  .submit-btn:hover {
-    background-color: #1d4ed8;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-  }
-  
-  /* Estilos para tarjetas de tabla */
-  .table-card {
-    background-color: #0f172a;
-    border: 1px solid #1e293b;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  }
-  
-  .table-container {
-    overflow-x: auto;
+    max-width: 100%;
   }
   
   .vehicles-table {
-    width: 100%;
-    border-collapse: collapse;
+    font-size: 0.875rem;
   }
   
-  .vehicles-table thead {
-    background-color: #1e293b;
-  }
-  
-  .vehicles-table th {
-    padding: 16px;
-    text-align: left;
-    font-weight: 600;
-    color: #cbd5e1;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
+  .vehicles-table th,
   .vehicles-table td {
-    padding: 16px;
-    color: #e2e8f0;
-    border-top: 1px solid #1e293b;
-    font-size: 14px;
+    padding: 1rem 0.75rem;
   }
   
-  .vehicles-table tr:hover {
-    background-color: #1e293b;
+  .page-header h2 {
+    font-size: 1.75rem;
   }
   
-  .placa-cell {
-    font-weight: 600;
-    color: #60a5fa;
+  .page-header p {
+    font-size: 1rem;
   }
-  
-  .tarifa-cell {
-    font-weight: 600;
-    color: #10b981;
-  }
-  
-  .empty-state {
-    padding: 48px;
-    text-align: center;
-  }
-  
-  .empty-state p {
-    color: #64748b;
-    font-size: 16px;
-    margin: 0;
-  }
-  
-  /* Responsivo */
-  @media (max-width: 768px) {
-    .page-container {
-      max-width: 100%;
-      padding: 0 16px;
-    }
-    
-    .form-card {
-      padding: 24px;
-    }
-    
-    .vehicle-form {
-      max-width: 100%;
-    }
-    
-    .vehicles-table {
-      font-size: 12px;
-    }
-    
-    .vehicles-table th,
-    .vehicles-table td {
-      padding: 12px 8px;
-    }
-  }
+}
+
+/* Estilos para el componente de cobro */
+.cobro-info {
+  background: rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  animation: slideIn 0.3s ease;
+}
+
+.cobro-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  color: #4f46e5;
+}
+
+.cobro-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: linear-gradient(120deg, #4f46e5, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cobro-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cobro-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.cobro-item span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9375rem;
+}
+
+.cobro-item strong {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cobro-total {
+  font-size: 1.25rem !important;
+  color: #34d399 !important;
+  font-family: 'Monaco', 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
